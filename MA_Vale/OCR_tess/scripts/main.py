@@ -22,4 +22,4 @@ for image_path in image_paths:
     draw_bounding_boxes_and_extract_patches(image, boxes, image_path)
 
 end = timeit.default_timer()
-print(f"Laufzeit: {end - start} Sekunden")
+print(f"pytesseract Laufzeit: {end - start} Sekunden")
