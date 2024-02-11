@@ -12,7 +12,7 @@ from image_processing import draw_bounding_boxes_and_extract_patches
 pytesseract.pytesseract.tesseract_cmd = r'/usr/bin/tesseract'  # Der Pfad kann variieren
 
 
-pdf_dir = './pdf'
+pdf_dir = '../pdf'
 image_paths = convert_pdf_to_images(pdf_dir)
 
 for image_path in image_paths:
