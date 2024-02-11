@@ -1,0 +1,42 @@
+Nummerierung	Text
+Box 1	DH-32
+Box 2	7
+Box 3	17052012
+Box 4	Ziegelfassade
+Box 5	ALPHATON
+Box 6	Querformat- Ausführung
+Box 7	252
+Box 8	2
+Box 9	5
+Box 10	Ortgang Flachdach
+Box 11	ALU - ATTIKA
+Box 12	1
+Box 13	1
+Box 14	O-HALTER
+Box 15	BOHRSCHR
+Box 16	MD
+Box 17	KEILBOHLE
+Box 18	ACHSE
+Box 19	VERTIKALES
+Box 20	GRUNDPROFIL
+Box 21	TRAG-
+Box 22	PROFIL
+Box 23	WARMEDAMMUNG
+Box 24	ALPHATON - ZIEGELPLATTE
+Box 25	THERM
+Box 26	30
+Box 27	30
+Box 28	TRENNELEMENT
+Box 29	ACHSMASS MAX 400
+Box 30	1
+Box 31	DUBEL
+Box 32	GEMAß STATIK
+Box 33	GLEITPUNKT
+Box 34	insbesondere die Weitergabe Vervielfältigung Veröffentlichung und Zurverfügungstellung bedarf unserer ausdrücklichen Zustimmung
+Box 35	geistiges Eigentum
+Box 36	ğ
+Box 37	Inhalt
+Box 38	Zeichnung bleibt unse
+Box 39	Verwendung
+Box 40	ğ
+Box 41	ğ
