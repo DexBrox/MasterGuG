@@ -1,2 +1,0 @@
-libleptonica-dev
-tesseract-ocr
