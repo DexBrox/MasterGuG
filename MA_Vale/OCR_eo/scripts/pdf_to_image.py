@@ -8,7 +8,7 @@ import os
 # pdf_dir: das Verzeichnis, in dem die PDF-Dateien gespeichert sind,
 # output_dir: das Verzeichnis, in dem die resultierenden Bilder gespeichert werden sollen.
 # output_dir hat einen Standardwert 'pdf/img', der verwendet wird, falls beim Aufruf der Funktion kein Wert angegeben wird.
-def convert_pdf_to_images(pdf_dir, output_dir='pdf/img'):
+def convert_pdf_to_images(pdf_dir, output_dir='../pdf/img'):
     # Initialisierung einer leeren Liste image_paths, die die Pfade der konvertierten Bilder speichern wird.
     image_paths = []
 

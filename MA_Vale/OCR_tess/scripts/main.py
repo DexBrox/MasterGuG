@@ -1,6 +1,13 @@
 import os
 import pytesseract
 import timeit
+import torch
+import warnings
+
+# Unterdrückung der Warnung
+warnings.filterwarnings("ignore", message="There is an imbalance between your GPUs.*") 
+# GPU-ID
+os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 
 start = timeit.default_timer()
 
