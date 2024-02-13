@@ -34,7 +34,7 @@ def draw_bounding_boxes_and_extract_patches(image, boxes, image_path, scale_fact
                 cv2.putText(image, str(box_number), (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 0), 2)
 
                 # Schreibt die Nummerierung und den erkannten Text in die Textdatei
-                txt_file.write(f"Box {box_number}\t{boxes['text'][i]}\n")
+                txt_file.write(f"Box \t{boxes['text'][i]}\n")
 
                 box_number += 1  # Erhöht die Nummerierung für die nächste Box
 
