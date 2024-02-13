@@ -1,6 +1,5 @@
 import cv2
 import easyocr
-import timeit
 
 SCALE_FACTOR = 2.0
 LANGUAGES = ['de', 'en']
@@ -19,17 +18,11 @@ canvas_size = 1280
 mag_ratio = 5
 
 def process_image_easyocr(image_path):
-    start_img_pre = timeit.default_timer()
     image = cv2.imread(image_path)
     scaled_image = cv2.resize(image, None, fx=SCALE_FACTOR, fy=SCALE_FACTOR, interpolation=cv2.INTER_LINEAR)
     reader = easyocr.Reader(LANGUAGES, gpu=GPU)
-    end_img_pre = timeit.default_timer()
-    print(f"Vorbereitungszeit: {end_img_pre - start_img_pre} Sekunden")
 
-    start_tim_results = timeit.default_timer()
     result = reader.readtext(image, detail=1, decoder=DECODER, paragraph=PARAGRAPH, allowlist=ALLOWLIST, blocklist=BLOCKLIST, workers=WORKERS, batch_size=BATCH_SIZE, rotation_info=ROTATION_INFO,
                              low_text=low_text, link_threshold=link_threshold, canvas_size=canvas_size, mag_ratio=mag_ratio, text_threshold=text_threshold)
-    end_tim_results = timeit.default_timer()
-    print(f"OCR-Verarbeitungszeit: {end_tim_results - start_tim_results} Sekunden")
 
     return result, image
