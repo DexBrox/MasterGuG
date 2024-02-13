@@ -1,6 +1,12 @@
 import cv2
 import os
 
+def gen_out(image_path, output_folder):
+    base_name = os.path.splitext(os.path.basename(image_path))[0]
+    output_path = os.path.join(output_folder, f"{base_name}_bb.jpg")
+
+    return output_path, base_name
+
 def check_overlap(box1, box2):
     if box1[0][0] > box2[1][0] or box1[1][0] < box2[0][0] or box1[0][1] > box2[1][1] or box1[1][1] < box2[0][1]:
         return False
@@ -23,22 +29,19 @@ def gen_bounding_boxes(results, scale_factor):
 
     return unique_boxes
 
-def draw_bounding_boxes(image, unique_boxes, output_folder, image_path):
+def draw_bounding_boxes(image, unique_boxes, output_folder, output_path):
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
     for box_number, (top_left, bottom_right, text, prob) in enumerate(unique_boxes, start=1):
         cv2.rectangle(image, top_left, bottom_right, (0, 255, 0), 2)
         cv2.putText(image, f"{box_number} ({prob:.2f})", (top_left[0], top_left[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
-    
-    base_name = os.path.splitext(os.path.basename(image_path))[0]
-    output_path = os.path.join(output_folder, f"{base_name}_bb.jpg")
-    
+
     cv2.imwrite(output_path, image)
 
-    return base_name
+    return 
 
-def draw_text_boxes(results, output_folder, base_name):
+def write_text(results, output_folder, base_name):
     
     txt_path = os.path.join(output_folder, f"{base_name}_text_data.txt")
     
