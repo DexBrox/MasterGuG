@@ -3,7 +3,7 @@ import glob
 import numpy as np
 import pandas as pd
 
-def load_files(gt_file_path, pred_file_path):
+def load_files(gt_file_path, pred_file_path, i):
     def process_files(files):
         processed_lines = []
 
@@ -16,11 +16,12 @@ def load_files(gt_file_path, pred_file_path):
                         processed_lines.append(processed_line)
         return processed_lines
 
-    gt_files = glob.glob(f'{gt_file_path}/*.txt')
-    pred_files = glob.glob(f'{pred_file_path}/*.txt')
+    # Stellen Sie sicher, dass die Pfade in einer Liste übergeben werden
+    gt_file = [f"{gt_file_path}/{i}.txt"]
+    pred_file = [f"{pred_file_path}/{i}.txt"]
 
-    gt_processed = process_files(gt_files)
-    pred_processed = process_files(pred_files)
+    gt_processed = process_files(gt_file)
+    pred_processed = process_files(pred_file)
 
     return gt_processed, pred_processed
 
@@ -88,8 +89,6 @@ def link_polygons_to_midpoints(polygons, poly_only_text, midpoint, midpoints_w_t
     linked_data = []
     df_data = []
 
-    print(poly_only_text[24:26])
-
     for polygon, poly_text in zip(polygons, poly_only_text):
         for midpoint, mid_text in midpoints_w_t:
             if point_in_polygon([midpoint], polygon)[0]:
@@ -124,7 +123,7 @@ def sort_linked_data_by_polygon_and_midpoint_x(linked_data):
 
     return sorted_data
 
-def sum_sentences(sorted_data):
+def sum_sentences(sorted_data, i):
     sum_data = []
     
     current_first_part_of_polygon = None
@@ -145,7 +144,7 @@ def sum_sentences(sorted_data):
     if current_first_part_of_polygon is not None:
         sum_data.append((current_first_part_of_polygon, collected_text.strip()))
 
-    csv_file_path = '../results/sum_data.csv'
+    csv_file_path = f'../results/sum_data_{i}.csv'
     df = pd.DataFrame(sum_data, columns=['label', 'predict'])
     df.to_csv(csv_file_path, index=False)
 

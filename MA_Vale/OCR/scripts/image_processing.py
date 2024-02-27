@@ -1,5 +1,6 @@
 import cv2
 import os
+import numpy as np
 
 def gen_out(image_path, image):
     base_name = os.path.splitext(os.path.basename(image_path))[0]
@@ -16,31 +17,30 @@ def check_overlap(box1, box2):
     return True
 
 def gen_bounding_boxes(results):
-    unique_boxes = []
+    boxes = []
 
     for bbox, text, prob in results:
-        top_left = tuple([int(val) for val in bbox[0]])
-        bottom_right = tuple([int(val) for val in bbox[2]])
-        unique = True
-        for ubox in unique_boxes:
-            if check_overlap((top_left, bottom_right), (ubox[0], ubox[1])):
-                unique = False
-                break
-        if unique:
-            unique_boxes.append((top_left, bottom_right, text, prob))
-    return unique_boxes
+        # Konvertiert die Eckpunkte in ein NumPy-Array für cv2.minAreaRect
+        rect = cv2.minAreaRect(np.array(bbox, dtype="float32"))
+        box = cv2.boxPoints(rect)
+        box = np.int0(box)  # Rundet die Koordinaten auf Ganzzahlen
+        boxes.append((box, text, prob))
+    return boxes
 
-def draw_bounding_boxes(image, unique_boxes, output_folder, base_name):
+def draw_bounding_boxes(image, results, output_folder, base_name):
+    boxes = gen_bounding_boxes(results)
+
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    for box_number, (top_left, bottom_right, text, prob) in enumerate(unique_boxes, start=1):
-        cv2.rectangle(image, top_left, bottom_right, (0, 255, 0), 2)
-        cv2.putText(image, f"{box_number} ({prob:.2f})", (top_left[0], top_left[1] - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+    for box, text, prob in boxes:
+        # Zeichnet jede Bounding Box
+        cv2.drawContours(image, [box], 0, (0, 255, 0), 2)
+        # Fügt Text hinzu
+        cv2.putText(image, f"{text} ({prob:.2f})", tuple(box[0]), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
-    img_path = os.path.join(output_folder, f"{base_name}_bb.jpg")
+    img_path = os.path.join(output_folder, f"{base_name}_rotated_bb.jpg")
     cv2.imwrite(img_path, image)
-    return 
 
 def write_text(results, output_folder, base_name, image_height, image_width):
     txt_path = os.path.join(output_folder, f"{base_name}.txt")
