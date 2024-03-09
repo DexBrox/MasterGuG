@@ -1,29 +1,38 @@
 label,predict
 SCHNITT A-A,SCHNITT A-A
 KRALLENHALTER,KRALLENHALTER
-ACHSMAẞ = MAX. 400,ACHSMAB = MAX: 400
-"Der Inhalt dieser Zeichnung bleibt unser geistiges Eigentum. Jede Verwendung, insbesondere die Weitergabe, Vervielfältigung, Veröffentlichung und Zurverfügungstellung bedarf unserer ausdrücklichen Zustimmung.","Der Inhalt dieser Zeichnung bleibt unser geistiges Eigentum. Jede Verwendung, insbesondere die Weitergabe, Vervielfaltigung, Verdffentlichung und Zurverflgungstellung bedarf unserer ausdrucklichen Zustimmung."
-UK TRAGPROFIL,UK TRAGPROFIL
-25,25
-BLECH,o m x=
-6,No)
-ALPHATON - ZIEGELPLATTE,ALPHATON - ZIEGELPLATTE
+ACHSMAẞ = MAX. 400,ACHSMAß MAX: 400
+"Der Inhalt dieser Zeichnung bleibt unser geistiges Eigentum. Jede Verwendung, insbesondere die Weitergabe, Vervielfältigung, Veröffentlichung und Zurverfügungstellung bedarf unserer ausdrücklichen Zustimmung.",Der Inhalt dieser Zeichnung bleibt unser geistiges Eigentum. Jede Verwendung. insbesondere die Weitergabe; Vervielfältigung; Veröffentlichung und Zurverfügungstellung bedarf unserer ausdrücklichen Zustimmung.
+UK TRAGPROFIL,1
+BLECH,BLECH
+ALPHATON - ZIEGELPLATTE,ALPHATON ZIEGELPLATTE
 ACHSE,ACHSE
-30,w So
-O-HALTER,Te D>. Ca m D>
-10,S
+18,18
+30,30
+O-HALTER,O-HAL
+10,10
+40,40
+30,30
+PROFIL,PROFIL
+TRAG-,TRAG-
 KRALLENHALTER,KRALLENHALTER
-WÄRMEDÄMMUNG,WARM
-WANDHALTER,me DHALTER
+BOHRSCHR.,BOHRSCHR
+WÄRMEDÄMMUNG,WÄRMEDÄMMUNG
+A,LA
+WANDHALTER,WANDHALTER
 FESTPUNKT,FESTPUNKT
 MOEDING-,MOEDING-
-FENSTERBANKPLATTE,FENSTER' BANKPLATTE
+FENSTERBANKPLATTE,FENSTERBANKPLATTE
 THERM.,THERM.
 TRENNELEMENT,TRENNELEMENT
-2.7.3b M 1:1 (V),2.7.36 M 1:1 (V)
-Fensterbank,sn
-Alu-Unterkonstruktion,lu-Unterkonstruktion
-ALPHTON - Ziegelfassade,ALPHATON - Ziegelfassade
-Querformat- Ausführung,Querformat- Ausfthrung
+DÜBEL,DÜBEL
+GEMÄẞ STATIK,GEMÄß STATIK
+NACH STATIK,HJVN STATIK
+2.7.3b M 1:1 (V),2.7.3b M1:1
+Fensterbank,Fensterbank
+Alu-Unterkonstruktion,Alu-Unterkonstruktion
+ALPHTON - Ziegelfassade,ALPHATON Ziegelfassade
+Querformat- Ausführung,Querformat- Ausführung
+aus Ziegelplatten,aus 1
 17.05.2012,17.05.2012
 ,AL-DH-36

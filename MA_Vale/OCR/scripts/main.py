@@ -24,8 +24,8 @@ count = 0
 image_paths = convert_pdf_to_images(pdf_dir, output_dir_img)
 
 for image_path in image_paths:
-    #results, image = process_image_easyocr(image_path)
-    results, image = process_image_tess(image_path)
+    results, image = process_image_easyocr(image_path)
+    #results, image = process_image_tess(image_path)
     #results, image = process_image_hy(image_path)
  
     base_name, image_height, image_width = gen_out(image_path, image)
